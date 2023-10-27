@@ -43,6 +43,13 @@ $ npm run start:dev
 
 ```
 
+## Documentation
+
+```bash
+`http://localhost:3000/docs`
+
+```
+
 ## Test
 
 ```bash

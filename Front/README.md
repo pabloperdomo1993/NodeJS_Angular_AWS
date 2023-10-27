@@ -10,7 +10,7 @@ $ npm install
 
 ```bash
 # start project
-$ npm run start:dev
+$ npm run start
 
 ```
 
