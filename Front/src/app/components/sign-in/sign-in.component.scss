@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+::ng-deep {
+  body {
+    background: #9B8ADB !important;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+
+  .image-icon {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+  }
+
+  span {
+    text-align: right;
+    margin-right: 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+    color: #FFF;
+    font-weight: 800;
+  }
+
+  h3 {
+    font-size: 15px;
+    color: #48E3BE;
+  }
+
+  h2 {
+    color: #FFF;
+    font-size: 20px;
+  }
+
+  button {
+    margin-top: 10px;
+    color: #FFF;
+    border-radius: 20px;
+    background: linear-gradient(270deg, #C645A9 17.66%, #58BBDB 89.57%);
+  }
+}

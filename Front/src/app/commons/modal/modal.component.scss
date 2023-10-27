@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        font-family: 'Lato', sans-serif;
+        color: #474747;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    figure {
+        text-align: center;
+    }
+
+    button {
+        color: #FFF;
+        border-radius: 20px;
+        background: linear-gradient(270deg, #C645A9 17.66%, #58BBDB 89.57%);
+        width: 40px;
+        margin-left: auto;
+        margin-right: 0px;
+    }
+}
+
+::ng-deep {
+    mat-dialog-container {
+        background-color: #D9D9D9;
+    }
+}

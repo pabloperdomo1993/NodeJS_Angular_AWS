@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+
+<section class="container">
+  <h1>Create message</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+    <h2>Title messages</h2>
+
+    <mat-form-field class="example-full-width">
+      <input matInput #message maxlength="256" placeholder="Title" formControlName="title">
+      <mat-hint align="end">{{message.value.length}} / 30</mat-hint>
+    </mat-form-field>
+
+    <h2>Messages</h2>
+
+    <mat-form-field class="message">
+      <input matInput #message maxlength="256" placeholder="Messages" formControlName="message">
+      <mat-hint align="end">{{message.value.length}} / 300</mat-hint>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">SHARE</button>
+  </form>
+
+  <aside class="container-card">
+    <div class="title">
+      <span>{{form.value.title}}</span>
+    </div>
+    <div class="content">
+      <p>{{form.value.message}}</p>
+      <div class="data">
+        <p>{{createAt | date: 'dd/MM/yyyy'}}</p>
+        <span>{{fullName}}</span>
+      </div>
+    </div>
+  </aside>
+</section>

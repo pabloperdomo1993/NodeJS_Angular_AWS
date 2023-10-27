@@ -1,0 +1,55 @@
+<app-menu></app-menu>
+
+<section class="container">
+  <h1>All Publications</h1>
+
+  <form [formGroup]="form" class="date">
+    <h2>Words to Search?</h2>
+
+    <div class="search">
+      <mat-form-field>
+        <mat-label>Post</mat-label>
+        <input matInput formControlName="post" (ngModelChange)="onChangeData($event)">
+      </mat-form-field>
+    </div>
+
+    <h2>Date Select</h2>
+
+    <div class="date">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" formControlName="date" (ngModelChange)="onChangeData($event)">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </form>
+
+  <div class="items">
+    <aside class="container-card" *ngFor="let item of paginator">
+      <div class="title">
+        <span [innerHTML]="item.title | highlight: form.value.post"></span>
+      </div>
+      <div class="content">
+        <p>{{item.message}}</p>
+        <div class="data">
+          <p>{{item.date}}</p>
+          <span>autor</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div *ngIf="showEmpty" class="empty">
+    <figure>
+      <img [src]="imageUrl" alt="">
+    </figure>
+
+    <p>Nothing to see here</p>
+  </div>
+
+  <div class="paginator" *ngIf="!showEmpty && items.length > 2">
+    <mat-paginator [length]="items.length" [pageSize]="2" [pageIndex]="pageIndex"
+      (page)="pageEvent($event)"></mat-paginator>
+  </div>
+
+</section>

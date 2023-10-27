@@ -1,0 +1,9 @@
+<div mat-dialog-content class="container">
+  <figure>
+    <img [src]="getImage()" alt="">
+  </figure>
+
+  <h1>{{data.message}}</h1>
+
+  <button mat-raised-button color="primary" type="submit" (click)="close()">Ok</button>
+</div>

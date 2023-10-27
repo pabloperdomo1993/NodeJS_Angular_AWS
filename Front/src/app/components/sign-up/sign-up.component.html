@@ -1,0 +1,44 @@
+<section class="container">
+  <figure class="image-icon">
+    <img [src]="urlImageIcon" alt="">
+  </figure>
+
+  <h1>Easy Media</h1>
+  <h3>Now, share is easy</h3>
+  <h2>Sign Up</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+    <mat-form-field>
+      <mat-label>Full Name</mat-label>
+      <input matInput formControlName="fullName" placeholder="Camilo Cifuentes">
+      <mat-error *ngIf="loginForm.get('fullName')?.hasError('required')">This field is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="example@email.com">
+      <mat-error *ngIf="loginForm.get('email')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Please enter a valid email</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" placeholder="*******">
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">The password must be at least 8
+        characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Confirm Password</mat-label>
+      <input matInput formControlName="confirmPassword" type="password" placeholder="*******">
+      <mat-error *ngIf="loginForm.get('confirmPassword')?.hasError('required')">This field is required</mat-error>
+      <mat-error *ngIf="loginForm.get('confirmPassword')?.hasError('passwordsNotMatch')">Passwords do not
+        match</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">SIGN UP</button>
+
+    <span>Already have an account<a href="">Login</a></span>
+  </form>
+</section>

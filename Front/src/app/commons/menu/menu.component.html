@@ -1,0 +1,26 @@
+<div><button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item disabled>
+      <mat-icon>group</mat-icon>
+      <span><strong>{{name}}</strong></span>
+    </button>
+    <button mat-menu-item (click)="redirectTo('/create-post')">
+      <mat-icon>party_mode</mat-icon>
+      <span>Create Publication</span>
+    </button>
+    <button mat-menu-item (click)="redirectTo('/my-posts')">
+      <mat-icon>public</mat-icon>
+      <span>My Publications</span>
+    </button>
+    <button mat-menu-item (click)="redirectTo('/all-post')">
+      <mat-icon>whatshot</mat-icon>
+      <span>Sell All Publications</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>clear</mat-icon>
+      <span>Sell All Logout</span>
+    </button>
+  </mat-menu>
+</div>
